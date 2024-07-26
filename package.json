@@ -8,8 +8,9 @@
 	},
 	"scripts": {
 		"prebuild": "rm -rf dist || npx rimraf dist",
-		"build": "tsc",
+		"build": "tsc -p tsconfig.build.json",
 		"start": "node --env-file=.env ./dist/server.mjs",
+		"test": "cross-env NODE_ENV=test node --test ./test/*.spec.mjs",
 		"generate": "drizzle-kit generate --config dist/dal/db.config.mjs",
 		"migrate": "drizzle-kit migrate --config dist/dal/db.config.mjs"
 	},
@@ -24,6 +25,7 @@
 	"devDependencies": {
 		"@types/node": "^20.14.12",
 		"@types/pg": "^8.11.6",
+		"cross-env": "^7.0.3",
 		"drizzle-kit": "^0.23.0",
 		"typescript": "^5.5.4"
 	}
