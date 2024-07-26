@@ -1,0 +1,13 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1722001301558,
+      "tag": "20240726134141_bent_vertigo",
+      "breakpoints": true
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+services:
+   db:
+      env_file:
+         - .env
+      container_name: drizzle_db
+      image: postgres:14.2
+      environment:
+         POSTGRES_PASSWORD: ${DB_PASS}
+         POSTGRES_USER: ${DB_USER}
+         POSTGRES_DB: ${DB_NAME}
+      ports:
+         - ${DB_PORT}:5432
+      volumes:
+         - ./pgsql:/var/lib/postgresql
+         # - ./pgsql:/var/lib/postgresql/data:cached
+         # - ./external_dump:/var/opt/
